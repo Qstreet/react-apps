@@ -252,4 +252,61 @@ more complex data structures
 | **Date**            | `new Date()`                   |
 | **Class instances** | `new SomeClass()`              |
 
+#### reassign (a variable)
+
+When you “reassign” a variable, you're telling it to stop pointing to its old value and start pointing to something else.
+```
+let x = 5;
+x = 10; // ← this is reassignment
+```
+```
+let person = { name: "Satchmo" };
+
+let user = person; // both point to the same object
+user.name = "Davis"; // modifies the object
+
+user = { name: "Alex" }; // ← this is reassignment
+```
+
+After the reassignment:
+
+user now points to a new object
+
+person still points to the original object
+
+```
+console.log(person.name); // "Davis"
+console.log(user.name);   // "Alex"
+```
+
+| Action            | What it does                              |
+| ----------------- | ----------------------------------------- |
+| `user.name = "X"` | Changes a property **on the same object** |
+| `user = { ... }`  | Makes `user` point to a **new object**    |
+
+### spread syntax
+
+user = { ...person };
+
+It copies all the properties from person into a new object.
+
+It’s not a reference.
+
+It creates a shallow copy.
+
+| Syntax      | Name   | Meaning                                   |
+| ----------- | ------ | ----------------------------------------- |
+| `...object` | Spread | Spreads properties out into a new object  |
+| `...array`  | Spread | Spreads items out into a new array        |
+| `...args`   | Rest   | Collects function arguments into an array |
+
+```
+let person = { name: "Satchmo", age: 40 };
+let user = { ...person };
+
+user.name = "Davis";
+
+console.log(person.name); // "Satchmo" — unchanged
+console.log(user.name);   // "Davis"
+```
 
