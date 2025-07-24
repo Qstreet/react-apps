@@ -32,7 +32,7 @@ export default function MyApp() {
 ### notes components
 
 1. declare `function`
-2. function (component) name must begin with upper case
+2. function (component) name must begin with UPPER CASE
 3. html tags within JSX must be lower case
 4. `return ()` always put parens after `return` for multi line.
 5. html must be enclosed by a parent tag. `<> ... </>` is common.
