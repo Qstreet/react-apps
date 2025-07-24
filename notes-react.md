@@ -220,3 +220,36 @@ const MyComponent = () => (
   <div>Hello, world!</div>
 );
 ```
+
+## Terms and Concepts
+### Javascript Values
+1. primitives
+2. objects
+
+### Primitive Values
+
+simple, immutable and NOT objects
+
+| Type          | Example                                        |
+| ------------- | ---------------------------------------------- |
+| **Number**    | `42`, `3.14`, `-10`                            |
+| **String**    | `"hello"`, `'world'`                           |
+| **Boolean**   | `true`, `false`                                |
+| **Undefined** | `undefined` (a variable that has no value yet) |
+| **Null**      | `null` (intentional empty value)               |
+| **BigInt**    | `123456789012345678901234567890n`              |
+| **Symbol**    | `Symbol('id')` (used for unique identifiers)   |
+
+Object Values
+
+more complex data structures
+
+| Type                | Example                        |
+| ------------------- | ------------------------------ |
+| **Object**          | `{ name: "Satchmo", age: 40 }` |
+| **Array**           | `[1, 2, 3]`                    |
+| **Function**        | `function greet() { ... }`     |
+| **Date**            | `new Date()`                   |
+| **Class instances** | `new SomeClass()`              |
+
+
