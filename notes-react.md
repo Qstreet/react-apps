@@ -41,6 +41,35 @@ export default function MyApp() {
 8. `return (...);` ended with `;`
 9. single tags must be closed `<img />` `<br />`
 
+## Props
+(properties) are how you pass data from one component to another in React, usually from a parent component to a child.
+
+They make components resuable.
+
+| Concept                                        | Explanation                                                                                |
+| -----------------------------------------------| ------------------------------------------------------------------------------------------ |
+| Props are read-only                            | You **can’t change** a prop in the child component. Think of props as function parameters. |
+| Passed like HTML attributes                    | Just like you’d write `<img src="url" />`, you write props like `<Greeting name="Satchmo" />`. |
+| Can be strings, numbers, objects, functions .. | Props are just JavaScript values.                                                              |
+| You can rename in the function                 | Instead of `props.name`, you can write: `function Greeting({ name }) { ... }`                  |
+
+```
+function UserCard({ name, age, isAdmin }) {
+  return (
+    <div>
+      <p>{name} ({age})</p>
+      {isAdmin && <p>Admin</p>}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <UserCard name="Muna" age={30} isAdmin={true} />
+  );
+}
+```
+
 ## CSS style
 
 In React, you specify a CSS class with `className`.
