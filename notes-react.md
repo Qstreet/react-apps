@@ -1,5 +1,31 @@
 # React Notes
 
+## Study
+[NextJS](https://nextjs.org/learn/react-foundations/what-is-react-and-nextjs)
+
+[Intro to DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
+[DOM in Chrome](https://developer.chrome.com/docs/devtools/dom/)
+
+
+User Interface - how users will consume and interact with your application.
+
+Routing - how users navigate between different parts of your application.
+
+Data Fetching - where your data lives and how to get it.
+
+Rendering - when and where you render static or dynamic content.
+
+Integrations - what third-party services (CMS, auth, payments, etc.) and how you connect to them.
+
+Infrastructure - where you deploy, store, and run your application code (serverless, CDN, edge, etc.).
+
+Performance - how to optimize your application for end-users.
+
+Scalability - how your application adapts as your team, data, and traffic grow.
+
+Developer Experience - your team's experience building and maintaining your application.
+
 ## components
 
 - React components are JavaScript functions that return markup
@@ -7,9 +33,17 @@
 
 ## JSX
 
-JSX is the name for react markup syntax
+JSX is the name for react markup syntax.
 
-HTML port to JSX? use an [online converter](https://transform.tools/html-to-jsx).
+But browsers don't understand JSX. You need a JavaScript compiler, like Babel, to transform your JSX code into regular JavaScript.
+
+### Three JSX Rules
+1. Return a single root element
+1. Close all tags
+1. camelCase most of the things! 
+ 
+
+HTML port to JSX? use a [converter](https://transform.tools/html-to-jsx).
 
 ```
 function SomeButton() {
@@ -26,8 +60,14 @@ export default function MyApp() {
     </div>
   );
 }
-
 ```
+## Named Pages
+### `layout.js`
+The main layout of your application. You can use it to add UI elements that are shared across all pages (e.g. navigation, footer, etc).
+
+### `page.js`
+The main page of application.
+
 
 ### notes components
 
@@ -42,9 +82,9 @@ export default function MyApp() {
 9. single tags must be closed `<img />` `<br />`
 
 ## Props
-(properties) are how you pass data from one component to another in React, usually from a parent component to a child.
+(properties) are how you pass data from one component to another in React, usually from a parent component to a child. Props are read-only information that's passed to components. State is information that can change over time, usually triggered by user interaction.
 
-They make components resuable.
+Props make components resuable.
 
 | Concept                                        | Explanation                                                                                |
 | -----------------------------------------------| ------------------------------------------------------------------------------------------ |
@@ -178,7 +218,9 @@ function MyButton() {
 1. note `onClick={handleClick}` has no parentheses at the end! Do not call the event handler function: you only need to pass it down. React will call your event handler when the user clicks the button.
 
 
-
+## Hooks
+### setState()
+Props are read-only information that's passed to components. State is information that can change over time, usually triggered by user interaction.
 
 ## Questions and Answers
 
@@ -222,6 +264,10 @@ const MyComponent = () => (
 ```
 
 ## Terms and Concepts
+
+### Destructuring
+a JavaScript syntax to unpack values from arrays, or properties from objects, into distinct variables. 
+
 ### Javascript Values
 1. primitives
 2. objects
@@ -308,5 +354,42 @@ user.name = "Davis";
 
 console.log(person.name); // "Satchmo" — unchanged
 console.log(user.name);   // "Davis"
+```
+
+## Snippets
+
+### map
+```
+function HomePage() {
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+ 
+  return (
+    <div>
+      <Header title="Develop. Preview. Ship." />
+      <ul>
+        {names.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### onClick
+```
+function HomePage() {
+  // 	...
+  function handleClick() {
+    console.log('increment like count');
+  }
+ 
+  return (
+    <div>
+      {/* ... */}
+      <button onClick={handleClick}>Like</button>
+    </div>
+  );
+}
 ```
 
