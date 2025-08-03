@@ -392,4 +392,23 @@ function HomePage() {
   );
 }
 ```
+### CSS
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  padding: 20px;
+  font-family: Inter;
+  background: #272A2C;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  align-items: center
+}
+```
